@@ -46,6 +46,7 @@ export const accreditationAPI = {
 
   verify: (token) => api.get(`/accreditation/verify/${token}`),
   checkIn: (token) => api.put(`/accreditation/verify/${token}/check-in`),
+  resendCard: (id) => api.post(`/accreditation/my/${id}/resend-card`),
 };
 
 export default api;
