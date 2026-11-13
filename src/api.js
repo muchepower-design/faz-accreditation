@@ -26,6 +26,8 @@ authAxios.interceptors.request.use((config) => {
 export const authAPI = {
   login: (email, password) => authAxios.post('/api/ticketing/auth/login', { email, password }),
   register: (data) => authAxios.post('/api/ticketing/auth/register', data),
+  // NEW — Google sign-in (returns our JWT + user; may create a new user on the fly)
+  googleLogin: (idToken) => authAxios.post('/api/auth/google', { id_token: idToken }),
 };
 
 export const accreditationAPI = {
